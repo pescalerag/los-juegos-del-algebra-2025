@@ -1,0 +1,293 @@
+body {
+    position: relative;
+    background: url('fondo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow-x: hidden; /* Evitar overflow horizontal */
+}
+h1{
+    text-align: center;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Capa de oscurecimiento más oscura */
+    z-index: 1;
+}
+
+#main-container {
+    position: relative;
+    z-index: 2; /* Para que el contenido esté por encima de la capa de oscurecimiento */
+    margin-top: 100px;
+    width: 800px; /* Ajustado para dispositivos de escritorio */
+    text-align: center;
+    font-size: x-large;
+}
+
+img {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem; /* Ajustado para mejor legibilidad en dispositivos de escritorio */
+}
+
+th {
+    background-color: #333;
+}
+
+tr{
+    background-color: #202020a1;
+    transition: background-color 0.3s ease;
+}
+
+tr:nth-child(even) {
+    background-color: #00000096;
+}
+
+tr:hover {
+    background-color: #ffffff1a;
+    cursor: pointer;
+}
+
+tr.hidden {
+    display: none;
+}
+
+.btn-clasificacion {
+    justify-content: center;
+    align-content: center;
+    height: 40px;
+    font-size: x-large;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    margin-bottom: 100px;
+}
+
+.btn-clasificacion:hover {
+    background-color: #555;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    z-index: 2;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 15px;
+    border: 2px solid #ffffff40;
+    border-radius: 5px;
+    background-color: #ffffff1a;
+    color: white;
+    font-size: 1rem;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+.search-input::placeholder {
+    color: #ffffff80;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ffffff80;
+    background-color: #ffffff26;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.countdown-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.countdown-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 100px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #24292e;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.github-link:hover {
+    background-color: #2f363d;
+}
+
+.github-logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    #main-container {
+        width: 90%;
+        margin-top: 50px;
+    }
+    
+    table {
+        overflow-x: auto; /* Permite desplazamiento horizontal en móviles */
+    }
+    
+    .btn-clasificacion {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    
+    img {
+        max-height: 200px;
+    }
+
+    .countdown-boxes {
+        gap: 10px;
+    }
+
+    .countdown-box {
+        min-width: 80px;
+        padding: 10px;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Media queries para pantallas pequeñas */
+@media screen and (max-width: 480px) {
+    #main-container {
+        width: 95%;
+        margin-top: 30px;
+    }
+    
+    .btn-clasificacion {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    th, td {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+    
+    img {
+        max-height: 150px;
+    }
+
+    .countdown-box {
+        min-width: 70px;
+        padding: 8px;
+    }
+
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+}

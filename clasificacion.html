@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://losjuegosdelalgebra.tugamelist.es/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Los Juegos Del Álgebra 2025">
+<meta property="og:description" content="Web oficial de los juegos del álgebra para el grupo 5 de la software en la US">
+<meta property="og:image" content="https://tugamelist.es/losjuegosdelalgebra/shareImage.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="losjuegosdelalgebra.tugamelist.es">
+<meta property="twitter:url" content="https://losjuegosdelalgebra.tugamelist.es/">
+<meta name="twitter:title" content="Los Juegos Del Álgebra 2025">
+<meta name="twitter:description" content="Web oficial de los juegos del álgebra para el grupo 5 de la software en la US">
+<meta name="twitter:image" content="https://tugamelist.es/losjuegosdelalgebra/shareImage.png">
+    <title>Clasificación - Juegos del álgebra</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        td:last-child {
+            color: white;
+        }
+        .negative {
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <h1>Clasificación</h1>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Buscar jugador..." id="searchInput">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Puntuación</th>
+                    <th>Juegos anteriores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Yehor Yazhborovskyi</td><td>9</td><td>+0.5</td></tr>
+                <tr><td>Alejandro García</td><td>9</td><td>+0.5</td></tr>
+                <tr><td>Jesús Racero</td><td>9</td><td>+0.5</td></tr>
+                <tr><td>Mario Muñoz</td><td>9</td><td>+0.5</td></tr>
+                <tr><td>Hamdi Fatooh</td><td>8</td><td>+0.5</td></tr>
+                <tr><td>Dario Gallardo</td><td>7</td><td>-0.5</td></tr>
+                <tr><td>Rafael Ruiz</td><td>7</td><td>-0.5</td></tr>
+                <tr><td>Francisco González</td><td>7</td><td>-0.5</td></tr>
+                <tr><td>Sebastián Torres</td><td>7</td><td>-0.5</td></tr>
+                <tr><td>Iván Trypuz</td><td>7</td><td>-0.5</td></tr>
+                <tr><td>Miriam Rodríguez</td><td>7</td><td>-0.5</td></tr>
+                <tr><td>Fernando Roldán</td><td>7</td><td>-0.5</td></tr>
+                <tr><td>Juan Grosso</td><td>6</td><td>-0.5</td></tr>
+                <tr><td>Jaime López</td><td>6</td><td>-0.5</td></tr>
+                <tr><td>Yufei Lei</td><td>6</td><td>-0.5</td></tr>
+                <tr><td>Santiago García</td><td>6</td><td>-0.5</td></tr>
+                <tr><td>José Escalera</td><td>6</td><td>-0.5</td></tr>
+                <tr><td>Jesús Vílchez</td><td>6</td><td>-0.5</td></tr>
+                <tr><td>Rafael Ramírez</td><td>6</td><td>-0.5</td></tr>
+    <tr><td>Pablo Del Valle</td><td>5</td><td>-0.5</td></tr>
+    <tr><td>Lukàs Selický</td><td>5</td><td>-0.5</td></tr>
+    <tr><td>André Herrmann</td><td>5</td><td>-0.5</td></tr>
+    <tr><td>Tahina Manie</td><td>4</td><td>-0.5</td></tr>
+    <tr><td>Rubén Martín</td><td>4</td><td>-0.5</td></tr>
+    <tr><td>Peter Gvozdják</td><td>4</td><td>-0.5</td></tr>
+            </tbody>
+        </table>
+        <a href="index.html" class="btn-clasificacion">Volver al inicio</a>
+    </div>
+    <script>
+        // Aplicar color rojo a los valores negativos
+        document.addEventListener('DOMContentLoaded', function() {
+            const cells = document.querySelectorAll('td:last-child');
+            cells.forEach(cell => {
+                if (cell.textContent.includes('-0.5')) {
+                    cell.classList.add('negative');
+                }
+            });
+
+            // Funcionalidad del buscador
+            const searchInput = document.getElementById('searchInput');
+            const rows = document.querySelectorAll('tbody tr');
+
+            searchInput.addEventListener('input', function(e) {
+                const searchText = e.target.value.toLowerCase();
+                
+                rows.forEach(row => {
+                    const name = row.querySelector('td').textContent.toLowerCase();
+                    if (name.includes(searchText)) {
+                        row.classList.remove('hidden');
+                    } else {
+                        row.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
