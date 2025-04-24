@@ -1,4 +1,4 @@
-var targetDate = new Date("2025-04-26T17:40:00");
+var targetDate = new Date("2025-04-20T17:40:00");
 var countdownInterval;
 
 function updateCountdown() {
@@ -6,7 +6,7 @@ function updateCountdown() {
     var difference = targetDate - now;
 
     if (difference <= 0) {
-        document.querySelector('.countdown-boxes').innerHTML = '<div class="countdown-box"><span class="countdown-number">¡Ya comenzó!</span></div>';
+        document.querySelector('.countdown-boxes').innerHTML = '<div class="countdown-box"><span class="countdown-number">Los juegos han finalizado</span></div>';
         clearInterval(countdownInterval);
         return;
     }
